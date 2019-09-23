@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ share_type.type_name }}</title>
+</head>
+<body>
+    <h2>分类:{{ share_type.type_name }}</h2>
+    {% for share in shares %}
+        <h3>标题:{{ share.title }}</h3>
+        <img src="{{ share.photo.url }}">
+        <video src="{{ share.video.url }}" controls="controls">hh</video>
+        <p>{{ share.content }}</p>
+        <p>分类:{{ share.share_type.type_name }}</p>
+        <p>作者:{{ share.author.username }}</p>
+    {% empty %}
+        <h3>暂无分享</h3>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ share.title }}</title>
+</head>
+<body>
+    <div>
+        <h3>标题:{{ share.title }}</h3>
+        <img src="{{ share.photo.url }}">
+        <video src="{{ share.video.url }}" controls="controls">hh</video>
+        <p>{{ share.content }}</p>
+        <p>分类:{{ share.share_type.type_name }}</p>
+        <p>作者:{{ share.author.username }}</p>
+        <p>阅读数量:{{ share.read_num }}</p>
+    </div>
+    <div>
+        <p>上一个:<a href="{% url 'share_detail' previous_share.pk %}">{{ previous_share.title }}</a></p>
+        <p>下一个:<a href="{% url 'share_detail' next_share.pk %}">{{ next_share.title }}</a></p>
+    </div>
+</body>
+</html>

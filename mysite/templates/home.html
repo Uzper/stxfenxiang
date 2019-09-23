@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="text/css" href="{% static 'logo.ico' %}">
+    <title>home</title>
+</head>
+<body>
+    <audio controls autoplay>
+        <source src="static/back_music.mp3" type="audio/mp3">
+    </audio>
+    <h1>大家好，这是首页！</h1>
+    {% for type in share_type_list %}
+        <h3><a href="{% url 'share_type' type.pk %}">{{ type.type_name }}</a></h3>
+    {% empty %}
+        <h3>暂无分类</h3>
+    {% endfor %}
+</body>
+</html>
