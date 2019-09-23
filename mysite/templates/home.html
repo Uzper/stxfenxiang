@@ -10,7 +10,7 @@
     <audio controls autoplay>
         <source src="static/back_music.mp3" type="audio/mp3">
     </audio>
-    <h1>大家好，这是首页！</h1>
+    <h1>大家好，这是首页！快来分享吧！</h1>
     {% for type in share_type_list %}
         <h3><a href="{% url 'share_type' type.pk %}">{{ type.type_name }}</a></h3>
     {% empty %}
